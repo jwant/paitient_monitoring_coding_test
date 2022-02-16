@@ -1,7 +1,6 @@
 <html>
     {% load static %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static '../static/styles.scss' %}">
     <body>
         <div class="container-fluid">
             <div class="row">
@@ -18,6 +17,74 @@
                   </div>
                 </nav>
                 <main class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                                        <div class="card" style="width: auto;">
+                        <div class="card-body">
+                            <h5 class="card-title">Clinicians</h5>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>User Name</th>
+                                        <th>X</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for clincian in clinician_ids %}
+                                        <tr>
+                                            <td>{{ clincian.first_name }}</td>
+                                            <td>{{ clincian.last_name }}</td>
+                                            <td>{{ clincian.email }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                
+                    <div class="card" style="width: auto;">
+                        <div class="card-body">
+                            <h5 class="card-title">Create Clinician</h5>
+                            <form method="POST" action="create_clinician">
+                                {% csrf_token %}
+                                <div class="form-row">
+                                    <div class="col-md-4 mb-3">
+                                      <label for="first_name">First name</label>
+                                      <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First name" required>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                      <label for="last_name">Last name</label>
+                                      <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last name" required>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                        <label for="username">Username</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="username">@</span>
+                                            </div>
+                                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-4 mb-3">
+                                      <label for="email">Email</label>
+                                      <input type="text" class="form-control" id="email" name="email" placeholder="email" required>
+                                    </div>
+                                    <div class="col-md-4 mb-3">
+                                      <label for="email">Password</label>
+                                      <input type="password" class="form-control" id="password" name="password" placeholder="password" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <input class="form-control btn btn-primary bg-dark col-2" type="submit" value="Create"/>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
                 </main>
             </div>
         </div>
