@@ -4,21 +4,7 @@
     <body>
         <div class="container-fluid">
             <div class="row">
-                <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-                    <div class="sidebar-sticky" id="navbarNavAltMarkup">
-                        <ul class="nav flex-column">
-                            <li>
-                                <a class="nav-item nav-link" href="{% url 'index'%}">Home</a>
-                            </li>
-                            <li>
-                                <a class="nav-item nav-link" href="{% url 'profiles'%}">Profiles</a>
-                            </li>
-                            <li>
-                                <a class="nav-item nav-link" href="{% url 'logout'%}">Logout</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                {% include 'index.html' %}
                 <main class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
                     {% if is_admin %}
                     <div class="card" style="width: auto;">

@@ -10,7 +10,6 @@ class Profile(models.Model):
 
     is_patient = models.BooleanField(default=False)
     clinician_id = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='user_clinician_id')
-    patient_measurements = models.ForeignKey(PatientMeasurement, on_delete=models.SET_NULL, null=True)
 
     def get_patient_ids(self):
         if self.is_clinician:
