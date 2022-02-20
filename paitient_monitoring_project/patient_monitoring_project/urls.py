@@ -1,4 +1,4 @@
-"""paitient_monitoring_project URL Configuration
+"""patient_monitoring_project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -20,4 +20,6 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('patient_measurements/', include('patient_measurements.urls')),
+    path('profiles/', include('profiles.urls')),
+    path('', include('patient_monitoring.urls')),
 ]

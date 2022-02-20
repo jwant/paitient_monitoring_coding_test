@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from .patient_measurement import PatientMeasurement
+from patient_measurements.models.patient_measurement import PatientMeasurement
 
 
 class Profile(models.Model):
