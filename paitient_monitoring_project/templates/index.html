@@ -1,0 +1,22 @@
+<html>
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky" id="navbarNavAltMarkup">
+                <ul class="nav flex-column">
+                    <li>
+                        <a class="nav-item nav-link" href="{% url 'index'%}">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-item nav-link" href="{% url 'patient_measurements'%}">Measurements</a>
+                    </li>
+                    <li>
+                        <a class="nav-item nav-link" href="{% url 'profiles'%}">Profiles</a>
+                    </li>
+                    <li>
+                        <a class="nav-item nav-link" href="{% url 'logout'%}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+</html>
